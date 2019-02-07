@@ -1,0 +1,7 @@
+// Write your assumptions here 
+
+1.  The entity PersonID in the table Attendees is used to keep 
+    track of the number of attendees in the conference. 
+
+2.  A room number is assigned to the rooms that have been assigned 
+    to the students that have opted for rooming arrangements 
