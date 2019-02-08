@@ -4,8 +4,7 @@ CREATE DATABASE ConferenceDatabase;
 -- type of attendee to categorize attendees 
 CREATE TABLE AttendeeTypes (
     AttendeeType varchar(20) NOT NULL,
-    AttendanceCost decimal(13,2) NOT NULL,
-    PRIMARY KEY (AttendeeType)
+    AttendanceCost decimal(13,2) NOT NULL
 );
 
 -- attendee has an attendee type 
@@ -60,10 +59,9 @@ CREATE TABLE SpeakerAttendees (
 
 -- Sponsors will have a sponsor level, ranking their sponsorship
 CREATE TABLE SponsorLevels (
-    SponsorLevel varchar(20) NOT NULL, -- PK, One of Platinum, Gold, Silver, Bronze
+    SponsorLevel varchar(20) NOT NULL, 
     FinancialSupport decimal(13,2), 
-    EmailsAllowed int,
-    PRIMARY KEY (SponsorLevel)
+    EmailsAllowed int
 );
 
 -- sponsors are allowed to have job postings 
@@ -87,15 +85,15 @@ CREATE TABLE Sponsors (
 
     -- FOREIGN KEY (SponsorLevel) REFERENCES SponsorsLevels(SponsorLevel)
 );
-
-CREATE TABLE SponsorAttendees (
+--I don't think we need this bc we have the Sponsors already attached as an attendee type
+/* CREATE TABLE SponsorAttendees (
     ID int NOT NULL, -- PK
     FirstName varchar(20) NOT NULL,
     LastName varchar(20) NOT NULL,
     Company varchar(20) NOT NULL,
     PRIMARY KEY (FirstName, LastName),
     FOREIGN KEY (Company) REFERENCES Sponsors(CompanyName)
-);
+); */ 
 
 -- speaker speaks at a session 
 CREATE TABLE ScheduleInformation (
