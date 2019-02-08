@@ -123,5 +123,24 @@ CREATE TABLE CommitteeMember (
 );
 
 
-
-
+insert into SponsorLevels values ('Gold', '5000.0', '2' );
+insert into SponsorLevels values ('Silver', '3000.0', '1');
+insert into SponsorLevels values ('Platinum', '10000.0', '3');
+insert into SponsorLevels values ('Bronze', '1000.0', '0');
+insert into Attendees values ('20', 'Cache', 'Angus', 'StudentAttedees');
+insert into Attendees values ('21', 'Carolyn', 'Day', 'ProfessionalAttendees');
+insert into Attendees values ('22', 'Ted', 'Munn', 'SpeakerAttendees');
+insert into Attendees values ('23', 'Shane', 'Madej', 'Sponsor');
+insert into RoomingArrangements values ('Cache, Cache2, Cache3', '2', '3', '4');
+insert into StudentAttendees values ('20', 'Cache', 'Angus', '2');
+insert into ProfessionalAttendees values ('21', 'Carolyn', 'Day', 'Computers');
+insert into SpeakerAttendees values ('22', 'Ted', 'Munn', 'QGIC');
+insert into AttendeeTypes values ('StudentAttendees', '50.0');
+insert into AttendeeTypes values ('ProfessionalAttendees', '100.0');
+insert into AttendeeTypes values ('SpeakerAttendees', '0.0');
+insert into AttendeeTypes values ('SponsorAttendees', '0.0');
+insert into Sponsors values ('BuzzFeed Unsolved', 'Gold', 'Video Producer', '2');
+insert into JobPostings values ('Buzzfeed Unsolved', 'Video Producer', '20000', 'Los Angeles', 'California');
+insert into ScheduleInformation values ('QGIC', '22', '10:00', '11:00', '9');
+insert into OrganizingCommittee values ('Setup','Tom Brady');
+insert into CommitteeMember values ('Tom', 'Brady', 'Setup', '1');
