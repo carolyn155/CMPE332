@@ -53,7 +53,7 @@ CREATE TABLE SpeakerAttendees (
     ID int NOT NULL, -- PK
     FirstName varchar(20) NOT NULL,
     LastName varchar(20) NOT NULL,
-    SessionSpeakingAt varchar(20),    
+    SessionSpeakingAt varchar(20) NOT NULL,    
     PRIMARY KEY (FirstName, LastName),
     FOREIGN KEY (ID) REFERENCES Attendees(ID)
 );
@@ -80,12 +80,11 @@ CREATE TABLE JobPostings (      -- for sponsors to post ads for jobs
 CREATE TABLE Sponsors (
     CompanyName varchar(20) NOT NULL, -- PK
     SponsorLevel varchar(20), -- referenced from sponsor levels
-    JobPostings varchar(20), -- multivalued
+    JobPosting varchar(20), -- multivalued
     EmailsSent int, -- derived from job postings to keep track of number of emails sent
     PRIMARY KEY (CompanyName),
-    FOREIGN KEY (JobPostings) REFERENCES JobPostings(JobTitle)
-
-    -- FOREIGN KEY (SponsorLevel) REFERENCES SponsorsLevels(SponsorLevel)
+    FOREIGN KEY (JobPosting) REFERENCES JobPostings(JobTitle),
+    FOREIGN KEY (SponsorLevel) REFERENCES SponsorLevels(SponsorLevel)
 );
 
 CREATE TABLE SponsorAttendees (
@@ -105,8 +104,8 @@ CREATE TABLE ScheduleInformation (
     EndTime time(4),
     RoomLocation varchar(20), 
     PRIMARY KEY (SessionName),
-    FOREIGN KEY (SpeakerID) REFERENCES SpeakerAttendees(ID)
-    -- FOREIGN KEY (SessionName) REFERENCES SpeakerAttendees(SessionSpeakingAt)
+    FOREIGN KEY (SpeakerID) REFERENCES SpeakerAttendees(ID),
+    FOREIGN KEY (SessionName) REFERENCES SpeakerAttendees(SessionSpeakingAt)
 );
 
 CREATE TABLE OrganizingCommittee (
